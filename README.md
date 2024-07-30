@@ -1,4 +1,4 @@
-
+Si comparamos los resultados de ambas pruebas podemos ver que utilizar ParallelStream (promedio de 76.505) no sería la mejor opción, ya que con Stream obtuvimos un mejor promedio (75.972), por lo que esta sería la mejor opción.
 
 ParallelStream:
 
