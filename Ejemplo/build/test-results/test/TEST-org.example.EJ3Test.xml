@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.EJ3Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-30T18:54:08" hostname="DESKTOP-LNA53D1" time="0.504">
+  <properties/>
+  <testcase name="testCrearCuatroTareas()" classname="org.example.EJ3Test" time="0.504"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

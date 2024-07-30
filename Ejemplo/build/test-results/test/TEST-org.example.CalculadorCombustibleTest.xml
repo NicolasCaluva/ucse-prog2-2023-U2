@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.CalculadorCombustibleTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-30T04:49:19" hostname="DESKTOP-LNA53D1" time="0.002">
+<testsuite name="org.example.CalculadorCombustibleTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-30T18:54:08" hostname="DESKTOP-LNA53D1" time="0.004">
   <properties/>
-  <testcase name="TestCalcularCombustibleDebeDevolverCero()" classname="org.example.CalculadorCombustibleTest" time="0.001"/>
-  <testcase name="TestGetInstanceDebeDevolverInstanciaCalculadorCombustible()" classname="org.example.CalculadorCombustibleTest" time="0.0"/>
+  <testcase name="TestCalcularCombustibleDebeDevolverCero()" classname="org.example.CalculadorCombustibleTest" time="0.002"/>
+  <testcase name="TestGetInstanceDebeDevolverInstanciaCalculadorCombustible()" classname="org.example.CalculadorCombustibleTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
