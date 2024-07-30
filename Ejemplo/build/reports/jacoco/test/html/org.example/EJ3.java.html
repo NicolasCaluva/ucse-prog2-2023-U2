@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EJ3.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Ejemplo</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">EJ3.java</span></div><h1>EJ3.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadLocalRandom;
+
+<span class="fc" id="L7">public class EJ3 {</span>
+
+    public void crearCuatroTareas(){
+<span class="fc" id="L10">        CompletableFuture&lt;Integer&gt; tareaUno = generateRandomNumberAsync();</span>
+<span class="fc" id="L11">        CompletableFuture&lt;Integer&gt; tareaDos = generateRandomNumberAsync();</span>
+<span class="fc" id="L12">        CompletableFuture&lt;Integer&gt; tareaTres = generateRandomNumberAsync();</span>
+<span class="fc" id="L13">        CompletableFuture&lt;Integer&gt; tareaCuatro = generateRandomNumberAsync();</span>
+
+<span class="fc" id="L15">        CompletableFuture&lt;Void&gt; todasLasTareas = CompletableFuture.allOf(tareaUno, tareaDos, tareaTres, tareaCuatro);</span>
+
+<span class="fc" id="L17">        todasLasTareas.thenAccept(r -&gt; {</span>
+            try {
+<span class="fc" id="L19">                int sum = tareaUno.get() + tareaDos.get() + tareaTres.get() + tareaCuatro.get();</span>
+<span class="fc" id="L20">                System.out.println(&quot;La suma de los nÃºmeros aleatorios es: &quot; + sum);</span>
+<span class="nc" id="L21">            } catch (Exception e) {</span>
+<span class="nc" id="L22">                e.printStackTrace();</span>
+<span class="fc" id="L23">            }</span>
+<span class="fc" id="L24">        });</span>
+
+<span class="fc" id="L26">        todasLasTareas.join();</span>
+<span class="fc" id="L27">    }</span>
+
+    private static CompletableFuture&lt;Integer&gt; generateRandomNumberAsync() {
+<span class="fc" id="L30">        return CompletableFuture.supplyAsync(() -&gt; {</span>
+<span class="fc" id="L31">            int numero = ThreadLocalRandom.current().nextInt(100, 501);</span>
+            try {
+<span class="fc" id="L33">                Thread.sleep(numero);</span>
+<span class="nc" id="L34">            } catch (InterruptedException e) {</span>
+<span class="nc" id="L35">                e.printStackTrace();</span>
+<span class="fc" id="L36">            }</span>
+<span class="fc" id="L37">            return numero;</span>
+        });
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
